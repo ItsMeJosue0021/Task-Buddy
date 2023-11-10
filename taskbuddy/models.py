@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30, blank=True)
     photo = models.ImageField(upload_to='profile_pics', blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
@@ -21,7 +20,7 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-class ProjectMembers(models.Model):
+class ProjectMember(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='members')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects')
 
@@ -39,3 +38,4 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+

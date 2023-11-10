@@ -12,5 +12,12 @@ def login(request):
 def signup(request):
     return render(request, 'pages/signup.html')
 
-def dashboard(request):
-    return render(request, 'pages/dashboard.html')
+
+def projects(request):
+    return render(request, 'pages/dashboard/projects.html')
+
+def colleagues(request):
+    return render(request, 'pages/dashboard/colleagues.html')
+
+def tasks(request):
+    return render(request, 'pages/dashboard/tasks.html')
